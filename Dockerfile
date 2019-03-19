@@ -1,5 +1,7 @@
 FROM sensu/sensu
 
 RUN apk add curl
-COPY http_check.sh /usr/local/bin/http_check.sh
-COPY file_check.sh /usr/local/bin/file_check.sh
+RUN apk add bc
+RUN apk add bash
+COPY check-cpu.sh /usr/local/bin/check-cpu.sh
+COPY check-mem.sh /usr/local/bin/check-mem.sh
